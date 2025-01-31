@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Deteksi Dini</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-green">
+    <div class="results-container">
+        <div class="glass-card animate-fade-in">
+            <h3 style="text-align: center;">Hasil Analisis Anda</h3>
+            <div class="analysis-row">
+                <div class="result-item">
+                    <img src="age.png" alt="Umur" class="result-icon">
+                    <h3>Usia</h3>
+                    <p style="text-align: center;">Usia Anda adalah <strong><span id="age-display"></span>
+                            tahun</strong>.</p>
+                    <p class="analysis" style="text-align: center;">Risiko diabetes dapat meningkat seiring dengan
+                        bertambahnya usia</p>
+                </div>
+
+                <div class="result-item">
+                    <img src="bmi_weight.png" alt="BMI" class="result-icon">
+                    <h3>BMI</h3>
+                    <p style="text-align: center;">BMI Anda adalah <strong><span id="bmi-display"></span></strong>.</p>
+                    <p class="analysis" style="text-align: center;">BMI yang lebih tinggi dapat meningkatkan risiko
+                        diabetes.</p>
+                </div>
+
+                <div class="result-item">
+                    <img src="family.png" alt="Riwayat Keluarga" class="result-icon">
+                    <h3>Riwayat Keluarga</h3>
+                    <p style="text-align: center;">Keluarga dengan riwayat diabetes: <strong><span
+                                id="family-diabetes-display"></span></strong>.</p>
+                    <p class="analysis" style="text-align: center;">Riwayat keluarga dengan diabetes dapat meningkatkan
+                        risiko Anda.</p>
+                </div>
+
+                <div class="result-item">
+                    <img src="2.png" alt="Langkah Harian" class="result-icon">
+                    <h3>Aktivitas Fisik</h3>
+                    <p style="text-align: center;">Langkah harian Anda masih rendah, yaitu sekitar <strong>4,500 langkah
+                            per hari</strong>.</p>
+                    <p class="analysis" style="text-align: center;">Ayo tingkatkan hingga <strong>7,000
+                            langkah per hari</strong> untuk menurunkan risiko Diabetes!</p>
+                </div>
+
+                <div class="result-item">
+                    <img src="3.png" alt="Lipatan Kulit" class="result-icon">
+                    <h3>Lipatan Kulit</h3>
+                    <p style="text-align: center;">Analisis menunjukkan indikasi <strong>Acanthosis Nigricans</strong>.
+                    </p>
+                    <p class="analysis" style="text-align: center;">Konsultasikan dengan dokter untuk pemeriksaan lebih
+                        lanjut.</p>
+                </div>
+            </div>
+
+            <div class="diabetes-risk highlight animate-fade-in">
+                <h3 style="text-align: center;">Risiko Diabetes</h3>
+                <p style="text-align: center;">Hasl menunjukkan risiko diabetes sebesar <strong>85%</strong>.</p>
+            </div>
+
+            <h3 style="text-align: center; margin-top: 2rem;">Rekomendasi</h3> <!-- Add "Rekomendasi" heading -->
+
+            <div class="action-row">
+
+                <div class="action-card">
+                    <img src="5.png" alt="Rekomendasi Faskes" class="action-icon">
+                    <h3>Rekomendasi Faskes</h3>
+                    <p style="text-align: center;">Kunjungi fasilitas kesehatan terdekat.</p>
+                    <button class="card-button" onclick="findHealthcare()">Cari Faskes</button>
+                </div>
+
+                <div class="action-card">
+                    <img src="6.png" alt="Hubungi Telemedis" class="action-icon">
+                    <h3>Hubungi Telemedis</h3>
+                    <p style="text-align: center;">Dapatkan konsultasi langsung secara online.</p>
+                    <button class="card-button" onclick="contactTelemedicine()">Konsultasi Sekarang</button>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="home-button button-animated" onclick="goHome()">Kembali ke Beranda</button>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('age-display').textContent = localStorage.getItem('age');
+            document.getElementById('bmi-display').textContent = localStorage.getItem('bmi');
+            document.getElementById('family-diabetes-display').textContent = localStorage.getItem(
+                'familyDiabetes') === 'yes' ? 'Ya' : 'Tidak';
+        });
+
+        function goHome() {
+            window.location.href = "index.html";
+        }
+
+        function findHealthcare() {
+            alert("Anda akan diarahkan ke daftar fasilitas kesehatan.");
+        }
+
+        function contactTelemedicine() {
+            alert("Anda akan diarahkan ke layanan telemedis.");
+        }
+    </script>
+</body>
+
+</html>

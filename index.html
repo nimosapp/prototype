@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>NIMOS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo {
+            max-width: 80%;
+            /* Adjust this value as needed */
+            height: auto;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            /* Center the subtitle */
+            margin: 0 auto;
+            /* Center the subtitle horizontally */
+            display: block;
+            width: 100%;
+        }
+
+        .glass-card p {
+            text-align: center;
+            /* Center the paragraph */
+            margin: 0 auto;
+            /* Center the paragraph horizontally */
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo" />
+        </div>
+    </header>
+    <main class="bg-green">
+        <div class="glass-card animate-fade-in">
+            <h1>Selamat Datang di <span class="brand">NIMOS</span></h1>
+            <p>NIMOS adalah sistem non-invasif yang memudahkan deteksi dini
+                diabetes dengan cara yang praktis, inklusif, dan terjangkau untuk semua
+            </p>
+            <div class="button-group">
+                <button class="primary-btn" onclick="fillPersonalData()">Mulai Deteksi Dini</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        function fillPersonalData() {
+            window.location.href = "personal_data.html";
+        }
+
+        function startDetection() {
+            window.location.href = "step1.html";
+        }
+    </script>
+</body>
+
+</html>
