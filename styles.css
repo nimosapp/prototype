@@ -177,7 +177,7 @@ button:hover {
     border: 2px solid #d94e4e; /* Red border for distinction */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
     text-align: center; /* Center align text */
-    animation: pulse 1.5s infinite; /* Add pulse animation */
+    animation: pulse 1s infinite; /* Add pulse animation */
 }
 
 .diabetes-risk h3 {
@@ -286,11 +286,19 @@ button:hover {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05);
+        transform: scale(1.05); /* Adjust this value to make the pulse slightly bigger */
     }
     100% {
         transform: scale(1);
     }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.animate-pulse {
+    animation: pulse 1s infinite;
 }
 
 .hidden {

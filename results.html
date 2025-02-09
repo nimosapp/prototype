@@ -13,6 +13,14 @@
     <div class="results-container">
         <div class="glass-card animate-fade-in">
             <h3 style="text-align: center;">Hasil Analisis Anda</h3>
+
+            <div class="diabetes-risk highlight animate-fade-in animate-pulse">
+                <h3 style="text-align: center;">Risiko Diabetes</h3>
+                <p style="text-align: center;">Hasil analisis menunjukkan risiko diabetes sebesar <strong><span
+                            id="diabetes-risk-display">85%</span></strong>.
+                </p>
+            </div>
+
             <div class="analysis-row">
                 <div class="result-item">
                     <img src="age.png" alt="Umur" class="result-icon">
@@ -28,8 +36,7 @@
                     <h3>BMI</h3>
                     <p style="text-align: center;">BMI Anda adalah <strong><span id="bmi-display"></span></strong>.</p>
                     <p class="analysis" style="text-align: center;">BMI yang lebih tinggi dari 25 lebih berisiko
-                        terhadap diabetes
-                        diabetes.</p>
+                        terhadap diabetes.</p>
                 </div>
 
                 <div class="result-item">
@@ -58,11 +65,6 @@
                     <p class="analysis" style="text-align: center;">Konsultasikan dengan dokter untuk pemeriksaan lebih
                         lanjut.</p>
                 </div>
-            </div>
-
-            <div class="diabetes-risk highlight animate-fade-in">
-                <h3 style="text-align: center;">Risiko Diabetes</h3>
-                <p style="text-align: center;">Hasls menunjukkan risiko diabetes sebesar <strong>85%</strong>.</p>
             </div>
 
             <h3 style="text-align: center; margin-top: 2rem;">Rekomendasi</h3> <!-- Add "Rekomendasi" heading -->
@@ -101,6 +103,24 @@
             document.getElementById('bmi-display').textContent = localStorage.getItem('bmi');
             document.getElementById('family-diabetes-display').textContent = localStorage.getItem(
                 'familyDiabetes') === 'yes' ? 'Ya' : 'Tidak';
+
+            // Animation for diabetes risk percentage
+            const riskElement = document.getElementById('diabetes-risk-display');
+            const targetValue = 85;
+            let currentValue = 0;
+            const increment = targetValue / 100;
+
+            const animateRisk = () => {
+                if (currentValue < targetValue) {
+                    currentValue += increment;
+                    riskElement.textContent = Math.floor(currentValue) + '%';
+                    requestAnimationFrame(animateRisk);
+                } else {
+                    riskElement.textContent = targetValue + '%';
+                }
+            };
+
+            animateRisk();
         });
 
         function goHome() {
